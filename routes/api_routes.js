@@ -23,12 +23,24 @@ router.get("/", function(req,res){
 
 
 router.post("/", function(req,res){
-	console.log(req.body.input);
+	//create new entry where burger_name is the input
 	db.burgers.create({burger_name: req.body.input}).then(function(){
 		res.redirect("/");
 	});
 });
 
+
+  router.put("/:id", function(req, res) {
+
+  	console.log(req.params.id)
+    db.burgers.update(
+      {devoured: true},
+      {where:
+        {id : req.params.id}})
+    .then(function(){
+    	res.redirect("/");  	
+	});
+});
 
 
 
