@@ -44,6 +44,18 @@ router.post("/", function(req,res){
 
 
 
+router.delete("/:id", function(req, res) {
+
+  	console.log(req.params.id)
+    db.burgers.destroy(
+      {where:
+        {id : req.params.id}})
+    .then(function(){
+    	res.redirect("/");  	
+	});
+});
+
+
 
 
 	
