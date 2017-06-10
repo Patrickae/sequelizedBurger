@@ -13,10 +13,20 @@
 			<form action="/{{this.id}}?_method=PUT" method="POST">
          	 <input type="hidden" name="devoured" value="false">
 
+         	 <form action="/" method="POST">
+         		 <div class="form-group">
+			   	 	<label for="name">Eater's Name</label>
+			   		 <input type="text" class="form-control" name="eater_name" placeholder="name of eater"></input>
+			 	 </div>
+			 
+
         	  <button type="submit" class = "btn btn-success">Devour</button>
+        	  </form>
        		 </form>
 
+
        		 <p> {{this.id}}. {{this.burger_name}}</p>
+
 			</div>
 
 
@@ -36,7 +46,7 @@
         	 	 <button type="submit" class = "btn btn-danger">X</button>
        		 </form>
 
-			<p> {{this.id}}. {{this.burger_name}}
+			<p> {{this.id}}. {{this.burger_name}}  Eaten by ({{this.nameId}})
 			</p>
 			</div>
 		{{/if}}

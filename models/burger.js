@@ -7,9 +7,8 @@ module.exports = function(sequelize, DataType){
 			validate:{
 				notEmpty: true,
 				len:[1,150]
-			}
-
-		},
+			}},
+			
 		devoured:{
 			type: DataType.BOOLEAN,
 			defaultValue: false

@@ -9,6 +9,8 @@ var router = express.Router();
 
 
 router.get("/", function(req,res){
+
+	
 	db.burgers.findAll({}).then(function(result){
 
   	//set table data as an array with key burger
@@ -24,10 +26,20 @@ router.get("/", function(req,res){
 
 router.post("/", function(req,res){
 	//create new entry where burger_name is the input
+	console.log(req.body);
+	// db.names.create({eater_name: req.body.eater_name});
 	db.burgers.create({burger_name: req.body.input}).then(function(){
 		res.redirect("/");
 	});
 });
+
+
+// router.post("/", function(req,res){
+// 	//create new entry where burger_name is the input
+// 	db.names.create({eater_names: req.body.name}).then(function(){
+// 		res.redirect("/");
+// 	});
+// });
 
 
   router.put("/:id", function(req, res) {
